@@ -1,4 +1,4 @@
-![SH1 Academy]("./public/logo.svg")
+![SH1 Academy](public/logo.svg)
 
 # SH1-Academy
 ## Introduction
