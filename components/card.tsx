@@ -8,12 +8,14 @@ const StyledCard: React.FC<{
     title: string;
     description: string;
     imageUrl: string;
-}> = ({href, title, description, imageUrl}) => {
+    color?: string;
+}> = ({href, title, description, imageUrl, color}) => {
     // on hover move image relative to mouse
     return (
         <Box
             sx={{
                 display: "flex",
+                userSelect: 'none',
                 flexDirection: "column",
                 alignItems: "flex-start",
                 justifyContent: "flex-end",
@@ -32,18 +34,19 @@ const StyledCard: React.FC<{
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(0,0,0,0.4)",
+                    backgroundImage: "linear-gradient(0deg, rgba(0, 0, 0, .6) 40%, rgba(0, 0, 0, 0) 100%)",
                     zIndex: 1,
                 },
                 '&:hover': {
                     cursor: "pointer",
                     "&::before": {
-                        backgroundColor: "rgba(0,0,0,0.6)",
+                        backgroundImage: "linear-gradient(0deg, rgba(0, 0, 0, .7) 40%, rgba(0, 0, 0, 0) 100%)",
                     },
                     '& .bg': {
                         transform: "scale(1.05) rotate(-2deg)",
                     },
-                    border: "1px solid #8acc33",
+                    border: "1px solid",
+                    borderColor: color || "primary.main",
                 }
             }}>
             <Box
@@ -64,11 +67,12 @@ const StyledCard: React.FC<{
             <Box sx={{
                 zIndex: 2,
                 padding: "1rem",
-                textShadow: "0 0 4px rgba(0,0,0,0.6)",
+                textShadow: "4px 4px 6px black",
             }}>
                 <Box component={"h3"} sx={{
-                    color: "accent.main",
+                    color: color || "primary.main",
                     fontSize: "1.5rem",
+                    fontWeight: 700,
                 }}>{title}</Box>
                 <Box sx={{
                     color: "text.main",

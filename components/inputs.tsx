@@ -19,7 +19,9 @@ const StyledInput = styled("input")(({ theme }) => ({
     }
 }));
 
-const SearchBar: React.FC = () => {
+const SearchBar: React.FC<{
+    placeholder?: string;
+}> = ({placeholder}) => {
     return (
         <Box sx={(theme)=>({
             display: 'flex',
@@ -33,7 +35,8 @@ const SearchBar: React.FC = () => {
             color: theme.palette.text.main,
             borderRadius: 0,
             fontSize: "16px",
-            height: "48px",
+            height: "100%",
+            maxHeight: 48,
             width: "100%",
             transition: ".2s ease-in-out",
 
@@ -47,7 +50,7 @@ const SearchBar: React.FC = () => {
                 outline: "none",
             }
         })}>
-            <StyledInput placeholder="Nagy keresődoboz..." />
+            <StyledInput placeholder={placeholder || "Keresés..."} />
             <Box component="button" onClick={()=>{
                 console.log("search");
             }} sx={{

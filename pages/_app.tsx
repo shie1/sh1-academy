@@ -17,7 +17,7 @@ const theme = createTheme({
             contrastText: "#ffffff",
         },
         secondary: {
-            main: "#292475",
+            main: "#6e64fa",
             contrastText: "#ffffff",
         },
         accent: {
@@ -47,11 +47,13 @@ export default function App({Component, pageProps}: AppProps) {
                         bgcolor: "background.paper",
                         border: "1px solid #4A4A4A",
                         color: "text.main",
-                        padding: "0 1rem",
+                        padding: ".8rem 1.5rem",
                         gap: "1rem",
                     }}>
-                        <img src="/logo.svg" alt="SH1 Academy" width="64" height="64"/>
-                        <SearchBar/>
+                        <img src="/logo.svg" alt="SH1 Academy" height={48} style={{
+                            aspectRatio: "1",
+                        }}/>
+                        <SearchBar placeholder="Kurzus keresése..."/>
                     </Box>
                 </Container>
             </Box>
