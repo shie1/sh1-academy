@@ -38,6 +38,9 @@ const Home: NextPage = () => {
                         justifyContent: "space-between",
                         height: "100%",
                         gap: "1.5rem",
+                        '@media (max-width: 900px)': {
+                            textAlign: 'center',
+                        },
                         '&:hover': {
                             '& .weight-anim': {
                                 fontWeight: 800,
@@ -46,7 +49,7 @@ const Home: NextPage = () => {
                     }}>
                         <Box component="h1" sx={(theme) => ({
                             color: theme.palette.primary.main,
-                            fontSize: "4rem",
+                            fontSize: "3.4rem",
                             "@media (max-width: 460px)": {
                                 fontSize: "3rem",
                             },
@@ -57,7 +60,7 @@ const Home: NextPage = () => {
                             fontFamily: '"Paytone One", monospace',
                             display: 'block',
                             overflow: 'hidden',
-                            maxHeight: "2.5em",
+                            maxHeight: "2.7em",
                         })}>Programozás mindenkinek</Box>
                         <Box component="h2" sx={{
                             fontSize: "2rem",

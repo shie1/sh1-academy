@@ -48,6 +48,10 @@ const SearchBar: React.FC<{
                 borderRadius: "2rem",
                 borderColor: "white",
                 outline: "none",
+                '& button': {
+                    stroke: "white !important",
+                    color: "white !important",
+                }
             }
         })}>
             <StyledInput placeholder={placeholder || "Keresés..."} />
@@ -73,7 +77,7 @@ const SearchBar: React.FC<{
                     stroke: "white",
                 },
             }}>
-                <Search fontSize={"inherit"} stroke={"inherit"} />
+                <Search strokeWidth={.25} fontSize={"inherit"} stroke={"inherit"} />
             </Box>
         </Box>
     );
